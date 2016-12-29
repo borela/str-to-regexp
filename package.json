@@ -1,0 +1,57 @@
+{
+  "name": "str-to-regex",
+  "version": "1.0.0",
+  "description": "Convert string to regexp.",
+  "license": "Apache-2.0",
+  "main": "build",
+  "scripts": {
+    "check": "flow check || exit 0",
+    "clean": "rimraf \"build/!(.git)\"",
+    "build": "npm run clean && run-p build:*",
+    "build:target": "babel ./src --out-dir ./build --source-maps",
+    "dev": "npm run clean && run-p dev:*",
+    "dev:target": "babel ./src --out-dir ./build --watch --source-maps",
+    "start": "npm run dev",
+    "test": "mocha tests/unit --compilers js:babel-register"
+  },
+  "babel": {
+    "plugins": [
+      "transform-flow-strip-types",
+      "transform-decorators-legacy",
+      "transform-class-properties",
+      "transform-export-extensions",
+      "transform-object-rest-spread"
+    ],
+    "presets": [
+      [
+        "latest",
+        {
+          "es2015": {
+            "modules": "commonjs"
+          }
+        }
+      ]
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borela/str-to-regexp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/borela/str-to-regexp/issues"
+  },
+  "homepage": "https://github.com/borela/str-to-regexp#readme",
+  "keywords": [
+    "convert",
+    "string",
+    "regexp"
+  ],
+  "author": {
+    "name": "Alexandre Borela",
+    "email": "alexandre@borela.tech",
+    "url": "http://www.borela.tech"
+  },
+  "devDependencies": {
+    "ctrine-dev-preset": "^1.0.0"
+  }
+}
