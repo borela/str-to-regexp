@@ -1,5 +1,5 @@
 {
-  "name": "str-to-regex",
+  "name": "str-to-regexp",
   "version": "1.0.0",
   "description": "Convert string to regexp.",
   "license": "Apache-2.0",
