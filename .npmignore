@@ -1,0 +1,3 @@
+*.lock
+*.sublime-workspace
+node_modules
