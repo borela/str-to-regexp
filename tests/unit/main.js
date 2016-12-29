@@ -11,7 +11,6 @@
 // the License.
 
 import assert from 'assert'
-import path from 'path'
 
 import toRegex from '../../src'
 
