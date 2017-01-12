@@ -25,7 +25,10 @@ function parseWithFlags(fullPattern:string) {
   }
 }
 
-export default (pattern:string) =>
-  COMPLEX_BEGIN.test(pattern)
+export function toRegExp (pattern:string) {
+  return COMPLEX_BEGIN.test(pattern)
     ? parseWithFlags(pattern)
     : new RegExp(pattern)
+}
+
+export default toRegExp

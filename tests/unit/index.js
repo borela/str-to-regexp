@@ -12,27 +12,32 @@
 
 import assert from 'assert'
 
-import toRegex from '../../src'
+import {toRegExp} from '../../src'
 
-describe('String to RegExp conversion function', () => {
-  it('converts a pattern without flags', () => {
+describe('toRegExp', () => {
+  it('Converts a pattern without flags.', () => {
     // Spaces will be preserved.
     assert.equal(
-      toRegex('   pattern   ').toString(),
+      toRegExp('   pattern   ').toString(),
       new RegExp('   pattern   ').toString()
     )
     // Spaces will be trimmed.
     assert.equal(
-      toRegex('   /pattern/   ').toString(),
+      toRegExp('   /pattern/   ').toString(),
       new RegExp('pattern').toString()
     )
   })
 
-  it('converts a pattern with flags', () => {
+  it('Converts a pattern with flags.', () => {
     // Spaces will be trimmed.
     assert.equal(
-      toRegex('   /pattern/i   ').toString(),
+      toRegExp('   /pattern/i   ').toString(),
       new RegExp('pattern', 'i').toString()
     )
+  })
+
+  it('Throws an exception on incomplete pattern.', () => {
+      assert.throws(() => toRegExp('/pattern'), Error)
+      assert.throws(() => toRegExp('   /pattern   '), Error)
   })
 })
