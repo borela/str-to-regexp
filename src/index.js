@@ -16,7 +16,7 @@ const COMPLEX_REGEX = /^\s*\/(.+)\/(\w*)\s*$/
 
 function parseWithFlags(fullPattern:string) {
   try {
-    let [, pattern, flags] = fullPattern.match(COMPLEX_REGEX)
+    let [ , pattern, flags ] = fullPattern.match(COMPLEX_REGEX)
     return flags
       ? new RegExp(pattern, flags)
       : new RegExp(pattern)
@@ -25,7 +25,7 @@ function parseWithFlags(fullPattern:string) {
   }
 }
 
-export function toRegExp (pattern:string) {
+export function toRegExp(pattern:string) {
   return COMPLEX_BEGIN.test(pattern)
     ? parseWithFlags(pattern)
     : new RegExp(pattern)
