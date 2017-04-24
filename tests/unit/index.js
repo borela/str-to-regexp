@@ -12,7 +12,7 @@
 
 import assert from 'assert'
 
-import {toRegExp} from '../../src'
+import { toRegExp } from '../../src'
 
 describe('toRegExp', () => {
   it('Converts a pattern without flags.', () => {
@@ -37,7 +37,7 @@ describe('toRegExp', () => {
   })
 
   it('Throws an exception on incomplete pattern.', () => {
-      assert.throws(() => toRegExp('/pattern'), Error)
-      assert.throws(() => toRegExp('   /pattern   '), Error)
+    assert.throws(() => toRegExp('/pattern'), Error)
+    assert.throws(() => toRegExp('   /pattern   '), Error)
   })
 })
