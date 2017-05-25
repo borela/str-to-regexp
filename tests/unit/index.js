@@ -18,7 +18,9 @@ describe('toRegExp', () => {
     expect(
       toRegExp('   pattern   ').toString()
     ).toBe(
+      /* eslint-disable no-regex-spaces */
       new RegExp('   pattern   ').toString()
+      /* eslint-enable no-regex-spaces */
     )
     // Spaces will be trimmed.
     expect(
