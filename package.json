@@ -5,36 +5,10 @@
   "license": "Apache-2.0",
   "main": "build",
   "scripts": {
-    "check": "flow check || exit 0",
     "clean": "rimraf \"build/!(.git)\"",
-    "build": "npm run clean && run-p build:*",
-    "build:target": "babel ./src --out-dir ./build --source-maps",
-    "dev": "npm run clean && run-p dev:*",
-    "dev:target": "babel ./src --out-dir ./build --source-maps --watch ",
-    "start": "npm run dev",
-    "test": "mocha tests/unit/*.js --compilers js:babel-register"
-  },
-  "eslintConfig": {
-    "extends": "ctrine-js-node"
-  },
-  "babel": {
-    "plugins": [
-      "transform-flow-strip-types",
-      "transform-decorators-legacy",
-      "transform-class-properties",
-      "transform-export-extensions",
-      "transform-object-rest-spread"
-    ],
-    "presets": [
-      [
-        "latest",
-        {
-          "es2015": {
-            "modules": "commonjs"
-          }
-        }
-      ]
-    ]
+    "build": "npm run clean && babel src --out-dir build --source-maps",
+    "start": "npm run test",
+    "test": "jest --testMatch=\"**/tests/(unit)/**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -55,7 +29,7 @@
     "url": "http://www.borela.tech"
   },
   "devDependencies": {
-    "ctrine-dev-preset": "^1.0.0",
-    "eslint-config-ctrine-js-node": "^1.0.0"
+    "ctrine-dev-preset": "^3.0.0",
+    "eslint-config-ctrine-js-shared": "^2.0.0"
   }
 }

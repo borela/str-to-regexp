@@ -10,34 +10,35 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-import assert from 'assert'
-
 import { toRegExp } from '../../src'
 
 describe('toRegExp', () => {
   it('Converts a pattern without flags.', () => {
     // Spaces will be preserved.
-    assert.equal(
-      toRegExp('   pattern   ').toString(),
+    expect(
+      toRegExp('   pattern   ').toString()
+    ).toBe(
       new RegExp('   pattern   ').toString()
     )
     // Spaces will be trimmed.
-    assert.equal(
-      toRegExp('   /pattern/   ').toString(),
+    expect(
+      toRegExp('   /pattern/   ').toString()
+    ).toBe(
       new RegExp('pattern').toString()
     )
   })
 
   it('Converts a pattern with flags.', () => {
     // Spaces will be trimmed.
-    assert.equal(
-      toRegExp('   /pattern/i   ').toString(),
+    expect(
+      toRegExp('   /pattern/i   ').toString()
+    ).toBe(
       new RegExp('pattern', 'i').toString()
     )
   })
 
   it('Throws an exception on incomplete pattern.', () => {
-    assert.throws(() => toRegExp('/pattern'), Error)
-    assert.throws(() => toRegExp('   /pattern   '), Error)
+    expect(() => toRegExp('/pattern')).toThrow(Error)
+    expect(() => toRegExp('   /pattern   ')).toThrow(Error)
   })
 })

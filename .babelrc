@@ -1,0 +1,12 @@
+{
+  "plugins": [
+    "transform-flow-strip-types",
+    "transform-decorators-legacy",
+    "transform-class-properties",
+    "transform-export-extensions",
+    "transform-object-rest-spread"
+  ],
+  "presets": [[
+    "env", { "modules": "commonjs" }
+  ]]
+}
