@@ -1,4 +1,4 @@
-*.lock
+*.log
 *.sublime-workspace
 build
 node_modules
