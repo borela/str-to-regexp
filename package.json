@@ -29,7 +29,7 @@
     "url": "http://www.borela.tech"
   },
   "devDependencies": {
-    "ctrine-dev-preset": "^3.0.0",
-    "eslint-config-ctrine-js-shared": "^2.0.0"
+    "babel-preset-ctrine-lib ": "^1.0.0",
+    "ctrine-dev-preset": "^4.0.0"
   }
 }
