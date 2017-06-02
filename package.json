@@ -6,9 +6,12 @@
   "main": "build",
   "scripts": {
     "clean": "rimraf \"build/!(.git)\"",
-    "build": "npm run clean && babel src --out-dir build --source-maps",
-    "start": "npm run test",
-    "test": "jest --testMatch=\"**/tests/(unit)/**/*.js\""
+    "build": "npm run clean && babel src -d build -s",
+    "dev": "npm run clean && run-p dev:*",
+    "dev:lib": "babel src -d build -sw",
+    "dev:tests": "jest --testMatch=\"**/tests/**/*.js\" --watch",
+    "start": "npm run dev",
+    "test": "jest --testMatch=\"**/tests/**/*.js\""
   },
   "repository": {
     "type": "git",
