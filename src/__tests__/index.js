@@ -10,9 +10,9 @@
 // License for the specific language governing permissions and limitations under
 // the License.
 
-import { toRegExp } from '../../src'
+import { toRegExp } from '..'
 
-describe('toRegExp', () => {
+describe('toRegExp()', () => {
   it('Converts a pattern without flags.', () => {
     // Spaces will be preserved.
     expect(
