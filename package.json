@@ -1,6 +1,6 @@
 {
   "name": "str-to-regexp",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Convert string to regexp.",
   "license": "Apache-2.0",
   "main": "build",
@@ -30,7 +30,7 @@
     "url": "http://www.borela.tech"
   },
   "devDependencies": {
-    "babel-preset-ctrine-lib": "^1.0.0",
-    "ctrine-dev-preset": "^4.0.0"
+    "babel-preset-ctrine-lib": "^1.5.2",
+    "ctrine-dev-preset": "^4.2.0"
   }
 }
