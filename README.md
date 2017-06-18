@@ -1,5 +1,3 @@
-# String to RegExp
-
 Converts a string to a regex object with flags.
 
 ## Installation
