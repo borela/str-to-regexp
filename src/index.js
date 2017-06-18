@@ -21,7 +21,7 @@ function parseWithFlags(fullPattern:string) {
       ? new RegExp(pattern, flags)
       : new RegExp(pattern)
   } catch (e) {
-    throw new Error(`Invalid pattern "${fullPattern}".`, e)
+    throw new Error(`Invalid pattern “${fullPattern}”.`, e)
   }
 }
 
