@@ -13,7 +13,7 @@
 import { toRegExp } from '..'
 
 describe('toRegExp()', () => {
-  it('Converts a pattern without flags.', () => {
+  it('converts a pattern without flags.', () => {
     // Spaces will be preserved.
     expect(
       toRegExp('   pattern   ').toString()
@@ -28,7 +28,7 @@ describe('toRegExp()', () => {
     )
   })
 
-  it('Converts a pattern with flags.', () => {
+  it('converts a pattern with flags.', () => {
     // Spaces will be trimmed.
     expect(
       toRegExp('   /pattern/i   ').toString()
@@ -37,7 +37,7 @@ describe('toRegExp()', () => {
     )
   })
 
-  it('Throws an exception on incomplete pattern.', () => {
+  it('throws an exception on incomplete pattern.', () => {
     expect(() => toRegExp('/pattern')).toThrow(Error)
     expect(() => toRegExp('   /pattern   ')).toThrow(Error)
   })
