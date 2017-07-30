@@ -30,7 +30,7 @@
     "url": "http://www.borela.tech"
   },
   "devDependencies": {
-    "babel-preset-ctrine-lib": "^1.5.2",
-    "ctrine-dev-preset": "^4.2.0"
+    "@ctrine/babel-preset-lib": "^3.0.0",
+    "@ctrine/toolbox": "^6.0.0"
   }
 }
